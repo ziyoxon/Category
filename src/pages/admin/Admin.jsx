@@ -28,7 +28,7 @@ const Admin = () => {
               <span>Create Category</span>
             </NavLink>
             <NavLink className="block p-3 rounded-md mb-2" to={"all-categorry"}>
-              <span>All Category</span>
+              <span>Manage Category</span>
             </NavLink>
 
             <NavLink
@@ -42,7 +42,6 @@ const Admin = () => {
       </div>
       <div className="flex-1 p-6 ">
         <Outlet />
-        
       </div>
     </div>
   );
