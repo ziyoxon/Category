@@ -7,7 +7,7 @@ const Manage = () => {
 
   return (
     <div className="grid  gap-8">
-      {loading && <p>Loading...</p>}
+      {loading }
       <Products data={data} />
     </div>
   );

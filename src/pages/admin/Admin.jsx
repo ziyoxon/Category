@@ -6,7 +6,7 @@ const Admin = () => {
 
   return (
     <div id="admin" className="flex">
-      <div className=" w-80 h-screen bg-slate-900 p-6 text-white">
+      <div className=" w-80 h-screen sticky top-0 left-0 bg-slate-900 p-6 text-white">
         <p className="text-2xl font-medium">Dashboard</p>
         <ul className="mt-10">
           <li>
