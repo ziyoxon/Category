@@ -1,14 +1,10 @@
 import { request } from "@/api";
 import Products from "@/components/Products";
+import { useFetch } from "@/hooks/useFetch";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
-  const [products, setProducts] = useState(null);
-
-  useEffect(() => {
-    request.get("/product/get").then((res) => setProducts(res.data));
-  }, []);
-
+  const { data, error, loading } = useFetch("/product/get");
   return (
     <div className="bg-gray-100 min-h-screen py-10">
       <div className="container mx-auto px-4">
@@ -19,7 +15,8 @@ const Home = () => {
           Browse through our amazing products
         </p>
         <div className="grid  gap-8">
-          <Products data={products} />
+          {loading && <p>Loading...</p>}
+          <Products data={data} />
         </div>
       </div>
     </div>

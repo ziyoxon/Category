@@ -37,7 +37,7 @@ const Category = () => {
       );
       setCategoryData(initialState);
       alert("You successfully updated category");
-      navigate("/see-category");
+      navigate("/findall-category");
     } catch {
       alert("Xatolik categoryni update qilishda");
     }
@@ -111,7 +111,7 @@ const Category = () => {
             {paramsId ? "Update Category" : "Create Category"}
           </button>
         </form>
-      </div>
+      </div> 
     </section>
   );
 };

@@ -22,18 +22,7 @@ const Header = () => {
       >
         Login
       </NavLink>
-      <NavLink
-        to={"/findall-category"}
-        className="text-white text-lg px-4 py-2 rounded-md hover:bg-blue-500 hover:text-gray-800 transition-all duration-300"
-      >
-        FindAll Category
-      </NavLink>
-      <NavLink
-        to={"/one-category"}
-        className="text-white text-lg px-4 py-2 rounded-md hover:bg-blue-500 hover:text-gray-800 transition-all duration-300"
-      >
-        FindOne Category
-      </NavLink>
+      
     </div>
   );
 };

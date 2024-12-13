@@ -49,7 +49,7 @@ const AllCategories = () => {
   const handleEditCategory = (id) => {
     try {
       if (id) {
-        return navigate(`/create-category?q=${id}`);
+        return navigate(`/create-category${id}`);
       }
     } catch (error) {
       alert("Xatolik kategoriyani o'chirishda xatolik");

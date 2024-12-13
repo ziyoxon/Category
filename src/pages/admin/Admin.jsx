@@ -1,8 +1,9 @@
-import ProductCreate from "@/components/ProductCreate";
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 
 const Admin = () => {
+  const { id } = useParams(); 
+
   return (
     <div id="admin" className="flex">
       <div className=" w-80 h-screen bg-slate-900 p-6 text-white">
@@ -23,17 +24,25 @@ const Admin = () => {
             >
               <span>Manage Product</span>
             </NavLink>
+            <NavLink className="block p-3 rounded-md mb-2" to={"categorry"}>
+              <span>Create Category</span>
+            </NavLink>
+            <NavLink className="block p-3 rounded-md mb-2" to={"all-categorry"}>
+              <span>All Category</span>
+            </NavLink>
+
             <NavLink
               className="block p-3 rounded-md mb-2"
-              to={"categorry"}
+              to={`one-category/get/${id}`}
             >
-              <span>Create Category</span>
+              <span>One Category</span>
             </NavLink>
           </li>
         </ul>
       </div>
       <div className="flex-1 p-6 ">
         <Outlet />
+        
       </div>
     </div>
   );
