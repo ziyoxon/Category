@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-gray-100 text-gray-700 ">
-      <div className="container  grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="container  grid grid-cols-1 md:grid-cols-4 ml-10 gap-10">
         <div>
           <h2 className="text-2xl font-bold mb-4">3legant.</h2>
           <p>43111 Hai Trieu street,</p>
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t mt-12 py-4 flex items-center justify-between text-gray-600 text-sm">
+      <div className="border-t mt-12 py-4 flex items-center ml-10 justify-between text-gray-600 text-sm">
         <div className="flex items-center gap-4">
           <p>Copyright © 2023 3legant. All rights reserved</p>
           <span className="hidden md:block">|</span>
