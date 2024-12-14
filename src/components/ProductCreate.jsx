@@ -1,6 +1,8 @@
 import { request } from "@/api";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductCreate = () => {
   const token = useSelector((s) => s.token.value);
@@ -12,7 +14,7 @@ const ProductCreate = () => {
     });
   }, []);
 
-  const handleCreateProduct = (e) => {
+  const handleCreateProduct = async (e) => {
     e.preventDefault();
     let formData = new FormData(e.target);
     const product = Object.fromEntries(formData);
@@ -22,15 +24,25 @@ const ProductCreate = () => {
     product.stock = +product.stock;
     product.average_rating = 0;
 
-    request.post("/product/create", product, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    try {
+      await request.post("/product/create", product, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      toast.success("Product created successfully! 🎉");
+      e.target.reset(); // Formani tozalash
+    } catch (error) {
+      toast.error("Failed to create product. Please try again.");
+      console.error(error);
+    }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      {/* ToastContainer */}
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
+
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <p className="text-2xl font-semibold text-gray-800 text-center mb-6">
           Create Product
@@ -65,7 +77,7 @@ const ProductCreate = () => {
           </div>
           <div>
             <input
-              className="w-80 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               type="url"
               name="image"
               placeholder="Image URL"

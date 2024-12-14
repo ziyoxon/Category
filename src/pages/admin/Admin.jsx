@@ -1,12 +1,21 @@
 import React from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams, useNavigate } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 const Admin = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
+  const navigate = useNavigate(); 
+
+  const handleHomeClick = () => {
+    navigate("/");
+  };
 
   return (
     <div id="admin" className="flex">
-      <div className=" w-80 h-screen sticky top-0 left-0 bg-slate-900 p-6 text-white">
+      <div className="w-80 h-screen sticky top-0 left-0 bg-slate-900 p-6 text-white">
+        <p className="cursor-pointer" onClick={handleHomeClick}>
+          <FaHome size={24} />
+        </p>
         <p className="text-2xl font-medium">Dashboard</p>
         <ul className="mt-10">
           <li>
@@ -40,7 +49,7 @@ const Admin = () => {
           </li>
         </ul>
       </div>
-      <div className="flex-1 p-6 ">
+      <div className="flex-1 p-6">
         <Outlet />
       </div>
     </div>

@@ -11,6 +11,7 @@ import Manage from "@/pages/admin/manage-product/Manage-product";
 import Categorry from "@/pages/admin/create-category/Create-category.product";
 import AllCateg from "@/pages/admin/create-category/findAllCate";
 import FindOneCateg from "@/pages/admin/create-category/findOne";
+import Section from "@/components/Section";
 
 const Router = () => {
   return (

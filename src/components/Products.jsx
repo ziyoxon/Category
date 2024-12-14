@@ -57,27 +57,27 @@ const Products = () => {
   const productItems = products.map((product) => (
     <div
       key={product.id}
-      className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center mb-4 w-80"
+      className="flex-shrink-0 bg-white p-4 rounded-lg shadow-md flex flex-col items-center w-60"
     >
       <img
         src={product.image || "https://via.placeholder.com/150"}
-        className="w-full h-60 object-cover rounded-t-lg hover:opacity-80 transition-opacity duration-300"
+        className="w-full h-48 object-cover rounded hover:opacity-80 transition-opacity duration-300"
         alt={product.name}
       />
-      <div className="p-4 text-center">
+      <div className="p-2 text-center">
         <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
         <p className="text-gray-600 mt-2">{product.price} USD</p>
       </div>
-      <div className="flex gap-5 mt-4">
+      <div className="flex gap-3 mt-2">
         <button
           onClick={() => handleDelete(product.id)}
-          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition duration-300"
+          className="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-lg transition duration-300"
         >
           Delete
         </button>
         <button
           onClick={() => handleEditProducts(product.id)}
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition duration-300"
+          className="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-lg transition duration-300"
         >
           Edit
         </button>
@@ -97,7 +97,7 @@ const Products = () => {
             <h2>Loading...</h2>
           </div>
         ) : products.length > 0 ? (
-          <div className="flex gap-6 flex-wrap justify-center">
+          <div className="flex overflow-x-scroll gap-6 scrollbar-hide">
             {productItems}
           </div>
         ) : (
