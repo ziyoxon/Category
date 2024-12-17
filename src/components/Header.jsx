@@ -33,7 +33,7 @@ function Header() {
           />
           <div className="flex items-center space-x-8">
             <NavLink
-              to={"/"}
+              to={"/home"}
               className="text-black text-lg px-4 py-2 rounded-md hover:text-gray-800 transition-all duration-300"
             >
               Home

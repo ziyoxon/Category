@@ -5,7 +5,7 @@ import { useFetch } from "@/hooks/useFetch";
 import Trend from "../Trend/Trend";
 import React from "react";
 
-const Home = () => {
+const Homeee = () => {
   const { data, error, loading } = useFetch("/product/get");
 
   return (
@@ -15,7 +15,7 @@ const Home = () => {
           <div className="md:w-1/2 flex items-center justify-center">
             <img
               className="w-full h-full max-w-2xl ml-auto"
-              src="src/assets/boy.png"
+              src="src/assets/place.png"
               alt="Boy in winter jacket"
             />
           </div>
@@ -43,10 +43,10 @@ const Home = () => {
           <Products data={data} />
         </div>
 
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
 };
 
-export default Home;
+export default Homeee;

@@ -12,12 +12,14 @@ import Categorry from "@/pages/admin/create-category/Create-category.product";
 import AllCateg from "@/pages/admin/create-category/findAllCate";
 import FindOneCateg from "@/pages/admin/create-category/findOne";
 import Section from "@/components/Section";
+import Homeee from "@/pages/home/Homeee";
 
 const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Homeee />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Route>
